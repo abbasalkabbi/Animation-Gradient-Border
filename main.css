@@ -1,0 +1,113 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;font-family: consolas;
+}
+body{
+    
+
+    background-color: #111;
+}
+.container{
+    position: relative;
+     width: 1200px;
+     height: 600px;
+     z-index: 1;
+     border: #fff 1px solid;
+     margin:10px auto;
+     overflow: hidden;
+     display: flex;  /*is trun flex*/
+     justify-content: space-around;
+     
+
+}
+.box{
+    color: #fff;
+    width: 320px;
+    height: 100px;
+    background-color: #111;
+    margin: 20px 30px;
+    transition: 0.5s;
+    position: relative;
+	z-index: 0;
+	width: 25% ;
+    height: 75%;
+	border-radius: 10px;
+	
+}
+.box:hover{
+    transform: translateY(-20px);
+}
+.box::before{
+    content: "";
+    position: absolute;
+    top: 0;left:0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,#ffbc00,#ff0058);
+    
+}
+.box::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,#8B0000,#00FF00);
+    filter: blur(30px);
+}
+.box:nth-child(1):after,.box:nth-child(1):before{
+    animation: roter2 5s infinite;
+    
+}
+@keyframes roter2 {
+    25%{background: linear-gradient(45deg,#8B0000,#00FF00);}
+    50% {background: linear-gradient(80deg,#8B0000,#00FF00);}
+    75%{background: linear-gradient(120deg,#8B0000,#00FF00);}
+    100% {background: linear-gradient(180deg,#8B0000,#00FF00);}
+ }
+.box:nth-child(2):after,.box:nth-child(2):before{
+    animation: roter2 5s infinite;
+   
+}
+@keyframes roter2 {
+    25%{background: linear-gradient(45deg,#8B0000,#00FF00);}
+    50% {background: linear-gradient(80deg,#8B0000,#00FF00);}
+    75%{background: linear-gradient(120deg,#8B0000,#00FF00);}
+    100% {background: linear-gradient(180deg,#8B0000,#00FF00);}
+ }
+.box:nth-child(3):after,.box:nth-child(3):before{
+   
+    animation: roter3 5s infinite;
+}
+@keyframes roter3 {
+    25%{background: linear-gradient(45deg,#8B0000,#00FF00);}
+    50% {background: linear-gradient(80deg,#8B0000,#00FF00);}
+    75%{background: linear-gradient(120deg,#8B0000,#00FF00);}
+    100% {background: linear-gradient(180deg,#8B0000,#00FF00);}
+}
+.box span{
+    position: absolute;
+    top:6px;
+    left: 6px;
+    bottom: 6px;
+    right: 6px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+
+}
+.box span::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(250, 250, 250, 0.1);
+    pointer-events: none;
+    
+}
+.box .content{
+    z-index: 10;
+    position: relative;
+    padding: 10px 20px;
+}
